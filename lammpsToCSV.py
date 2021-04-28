@@ -35,8 +35,11 @@ def convert(filename, dest):
             elif "Loop" in line:
                 break
             else:
-                k = [float(x) for x in line.split(" ") if x != '' and x != '\n']
-                data.append(k)
+                try:
+                    k = [float(x) for x in line.split(" ") if x != '' and x != '\n']
+                    data.append(k)
+                except:
+                    pass
     df = pd.DataFrame(data, columns=columns)
 
     df.to_csv(output)
