@@ -24,7 +24,7 @@ def convert(filename, dest):
     data = []
     for line in lines:    
         if not found:
-            if "Setting up run" in line:
+            if "run ..." in line:
                 found = True
                 continue
         if found:
